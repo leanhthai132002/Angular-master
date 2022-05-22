@@ -1,0 +1,56 @@
+<div class="container">
+  <div>
+    <p>Angular Form</p>
+    <app-form></app-form>
+  </div>
+
+  <hr>
+
+  
+  <div>
+    <p>sự kiện</p>
+    <button class="btn btn-primary" (click)="onClickBtn()">
+      {{ showStatus ? "Ẩn" : "Hiện" }} bảng dữ liệu
+    </button>
+    <!-- <div>
+      <label for="input">Sự kiện cho input</label>
+      <input type="text" id="input" (input)="onInput($event)">
+    </div> -->
+    <div>
+      <label for="input">Name</label> <br>
+      <input type="text" id="input" (input)="onInput($event, 'name')" />
+    </div>
+  </div>
+  <div>
+    <label for="input">Dame</label> <br>
+    <input type="text" id="input" (input)="onInput($event, 'dame')" />
+  </div>
+  <div>
+    <label for="input">Defend</label> <br>
+    <input type="text" id="input" (input)="onInput($event, 'defend')" />
+  </div>
+  <div>
+    <label for="input">Speed</label> <br>
+    <input type="text" id="input" (input)="onInput($event, 'speed')" />
+  </div>
+  <div>
+    <label for="input">Price</label> <br>
+    <input type="text" id="input" (input)="onInput($event, 'price')" />
+  </div>
+  <div>
+    <label for="input">Avatar</label> <br>
+    <input type="text" id="input" (input)="onInput($event, 'avatar')" />
+  </div>
+  <div><br>
+    <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </div>
+
+  <div>Tên sv: <app-name [name]="studentName"></app-name></div>
+  <div>Mã sv: <app-identity [id]="studentId"></app-identity></div>
+
+  <h1>Champions LMHT</h1>
+  <div>
+    <!-- <app-table [champions]="champs" class="{{showStatus ? 'db' : 'dn'}}"></app-table> -->
+    <app-table [champions]="champs" *ngIf="showStatus"></app-table>
+  </div>
+</div>
